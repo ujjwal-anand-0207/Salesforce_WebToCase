@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Case for Order</title>
+</head>
+<body>
+    <h2>Submit a Case Related to an Order</h2>
+ 
+    <form action="https://cunning-impala-4elfgc-dev-ed.trailblaze.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+ 
+        <!-- Hidden fields to link the case to the Order -->
+        <input type="hidden" name="orgid" value="yourSalesforceOrgID">
+        <input type="hidden" name="retURL" value="https://yourWebsite.com/thank-you">
+ 
+        <!-- Case Subject -->
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required><br><br>
+ 
+        <!-- Case Description -->
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+ 
+        <!-- Order Number -->
+        <label for="order">Order Number:</label>
+        <input type="text" id="order" name="Order__c" required><br><br>
+ 
+        <!-- Classification Dropdown -->
+        <label for="classification">Classification:</label>
+        <select name="Classification__c" id="classification" required>
+            <option value="Technical Issue">Technical Issue</option>
+            <option value="Billing Issue">Billing Issue</option>
+            <option value="Other">Other</option>
+        </select><br><br>
+ 
+        <!-- Subclassification Dropdown based on Classification -->
+        <label for="subclassification">Subclassification:</label>
+        <select name="Sub_classification__c" id="subclassification" required>
+            <option value="Hardware">Hardware</option>
+            <option value="Software">Software</option>
+            <option value="Payment">Payment</option>
+            <option value="Other">Other</option>
+        </select><br><br>
+ 
+        <!-- Contact Information (Email) -->
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+ 
+        <!-- Submit Button -->
+        <input type="submit" value="Submit Case">
+    </form>
+ 
+</body>
+</html>
+ 
